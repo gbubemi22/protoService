@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package identity;
 
-option go_package = "github.com/gbubemi22/proto-service/proto;identity";
+option go_package = "github.com/gbubemi22/proto-service/proto";
 
 service IdentityService {
   rpc CreateCustomer(RegisterRequest) returns (RegisterResponse);
