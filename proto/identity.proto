@@ -2,33 +2,42 @@ syntax = "proto3";
 
 package identity;
 
-option go_package = "github.com/gbubemi22/proto-service/proto";
+// Specify the Go package for the generated code
+option go_package = "github.com/oritse/identity-service/internal/pb";
 
+// Define the IdentityService
 service IdentityService {
+  // CreateCustomer registers a new customer
   rpc CreateCustomer(RegisterRequest) returns (RegisterResponse);
-  rpc Login (LoginRequest) returns (LoginResponse);
+
+  // Login authenticates a user
+  rpc Login(LoginRequest) returns (LoginResponse);
 }
 
+// RegisterRequest contains the data required to register a new customer
 message RegisterRequest {
   string firstName = 1;
-  string lastName= 2;
+  string lastName = 2;
   string password = 3;
-  string email  = 4;
-  string otp  =5;
+  string email = 4;
+  string otp = 5;
   bool emailStatus = 6;
   string globalId = 7;
   string expiredAt = 8;
 }
 
+// RegisterResponse contains the response after registering a customer
 message RegisterResponse {
   string message = 1;
 }
 
+// LoginRequest contains the data required to authenticate a user
 message LoginRequest {
   string username = 1;
   string password = 2;
 }
 
+// LoginResponse contains the response after authenticating a user
 message LoginResponse {
   string token = 1;
 }
