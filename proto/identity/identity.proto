@@ -3,7 +3,7 @@ syntax = "proto3";
 package identity;
 
 // Specify the Go package for the generated code
-option go_package = "github.com/oritse/identity-service/internal/pb";
+option go_package = "github.com/gbubemi22/identity-service/internal/pb";
 
 // Define the IdentityService
 service IdentityService {
