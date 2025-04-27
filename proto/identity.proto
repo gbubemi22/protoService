@@ -8,7 +8,7 @@ option go_package = "github.com/oritse/identity-service/internal/pb";
 // Define the IdentityService
 service IdentityService {
   // CreateCustomer registers a new customer
-  rpc CreateCustomer(RegisterRequest) returns (RegisterResponse);
+  rpc CreateUser(RegisterRequest) returns (RegisterResponse);
 
   // Login authenticates a user
   rpc Login(LoginRequest) returns (LoginResponse);
